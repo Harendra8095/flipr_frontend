@@ -92,12 +92,12 @@ class ListViewHolder extends Component{
           <CardActionArea
             style = {{...styles.listItem}}
             onClick = {()=>{
-              if(status===this.props.status){
+              if(status==='Upcoming'){
                 this.props.fetchMatchDetails(matchId);
                 this.props.fetchTeamDetails(matchId);
                 this.props.changeControl('team');
               }
-              else{
+              if(status==='Finished'){
                 this.props.fetchMatchScore(matchId);
                 this.onShow();
               }
