@@ -9,6 +9,7 @@ import TeamDetailsReducer from './reducers/TeamDetailsReducer';
 import AddPlayerReducer from './reducers/AddPlayerReducer';
 import RemovePlayerReducer from './reducers/RemovePlayerReducer';
 import MatchScoreReducer from './reducers/MatchScoreReducer';
+import PlayerRoleReducer from './reducers/PlayerRoleReducer';
 
 
 const appReducer = combineReducers({
@@ -20,6 +21,7 @@ const appReducer = combineReducers({
   addPlayer: AddPlayerReducer,
   removePlayer: RemovePlayerReducer,
   matchScore: MatchScoreReducer,
+  playerRole: PlayerRoleReducer,
 });
 
 const rootReducer = (state, action) => {

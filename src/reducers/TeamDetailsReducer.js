@@ -2,6 +2,8 @@
 
 const STATE = {
   matchId: '',
+  captain: false,
+  vice_captain: false,
   team: [],
   credit_spent: 0,
   error: '',

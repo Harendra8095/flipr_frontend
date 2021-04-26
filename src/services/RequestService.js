@@ -8,7 +8,7 @@ import store from '../configs/store';
 
 export default class RequestService {
   constructor(route = '') {
-    let uri = 'http://ff0a9468d7ad.ngrok.io' || '';
+    let uri = 'http://65.2.157.158:5000' || '';
     this.url = `${uri}/${route}`;
 
     axios.defaults.headers = {

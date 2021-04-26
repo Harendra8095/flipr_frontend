@@ -4,6 +4,7 @@ import {
   POST_ADD_PLAYER,
   POST_REMOVE_PLAYER,
   RESET_UPDATE_SUCCESS,
+  POST_PLAYER_ROLE,
 } from '../constants/action-constants';
 
 
@@ -22,6 +23,16 @@ export const postRemovePlayer = (matchId, playerId)=>({
   data : {
     'match_id' : matchId,
     'player_id' : playerId,
+  },
+});
+
+export const postPlayerRole = (matchId, playerId, role)=>({
+  type : POST_PLAYER_ROLE,
+  route : `user/assign`,
+  data : {
+    'match_id' : matchId,
+    'player_id' : playerId,
+    'role' : role,
   },
 });
 
