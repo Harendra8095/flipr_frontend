@@ -1,0 +1,16 @@
+export const PRIMARY = '#99621E';
+export const SECONDARY = '#4C061D';
+export const PRIMARY_SPECIAL = '#320A28';
+export const FOREGROUND_2 = '#86a5d9';
+export const BACKGROUND = '#f1e3d3';
+export const BLACK = 'black';
+export const LIGHT_CYAN = '#D1FAFF';
+export const YANKEES_BLUE = '#25283D';
+export const SPECIAL_FONT = '#044389';
+export const WHITE = '#F9F8F8';
+export const LIGHT_SLATE_GRAY = '#7E7F9A';
+export const ANDROID_GREEN = '#9BC53D';
+export const DARK_GREEN = '#00B01D';
+export const GUNMETAL = '#272838';
+export const RED = '#C7141A';
+export const PALE_LAVENDER = '#D8E1FF';
