@@ -1,9 +1,9 @@
 //abhishek360
 
 const STATE = {
-  token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InVzZXItMCIsImV4cCI6MTYyNzI4NjQ5NX0.XUb8XdQjN_W7xQcZFY2a1dmyF8mJTi1guVXn1WN0M7E',
+  token: '',
   username: 'User',
-  loggedIn: true,
+  loggedIn: false,
   isLoading: false,
 };
 
