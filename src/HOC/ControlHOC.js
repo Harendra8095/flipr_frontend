@@ -7,6 +7,7 @@ import {
 } from '@material-ui/core';
 import MatchListView from '../components/ViewHolder/MatchListView';
 import MatchSelectView from '../components/ViewHolder/MatchSelectView';
+import ScoreboardView from '../components/ViewHolder/ScoreboardView';
 
 class ControlHOC extends Component {
 
@@ -31,6 +32,11 @@ class ControlHOC extends Component {
       case "team" :
         return (
           <MatchSelectView/>
+        );
+
+      case "live" :
+        return (
+          <ScoreboardView/>
         );
 
       default:

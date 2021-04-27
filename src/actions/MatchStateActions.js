@@ -6,6 +6,7 @@ import {
   FETCH_TEAM_DETAILS,
   RESSET_SUCCESS,
   FETCH_MATCH_SCOREBOARD,
+  FETCH_LIVE_SCORE,
 } from '../constants/action-constants';
 
 export const fetchMatchList = ()=>({
@@ -30,6 +31,11 @@ export const fetchMatchScore = (matchId)=>({
   route : `user/scoreboard?match_id=`,
   query: matchId,
 });
+
+export const fetchLiveScore = ()=>({
+  type : FETCH_LIVE_SCORE,
+  route : `team/live_score`,
+})
 
 export const ressetStatusChange = ()=>({
   type : RESSET_SUCCESS,

@@ -19,20 +19,38 @@ class Admin extends Component{
     this.adminRequests = new RequestService('user');
   }
 
-  handleLogin = async ( username, password ) => {
-    const data = await this.adminRequests.auth( username, password );
-    if(data.message==='Token success'){
-      const payload = data.payload;
-      var user = {
-        token: payload['auth-token'],
-        name: payload.username,
-        loggedIn: true,
-      }
-      this.props.setUserDetails(user);
+  handleLogin = async ( username, password, type, contact='') => {
 
+    if(type==='login'){
+      const data =  await this.adminRequests.auth( username, password );
+      
+      if(data.message==='Token success'){
+        const payload = data.payload;
+        var user = {
+          token: payload['auth-token'],
+          name: payload.username,
+          loggedIn: true,
+        }
+        this.props.setUserDetails(user);
+        
+      }
+      else{
+        alert('Try Again, Failed to Login!');
+      }
     }
-    else{
-      alert('Try Again, Failed to Login!');
+    else
+    {
+      const data = await this.adminRequests.register(username, password, contact);
+      if(data.message==='User created successfully.'){
+        alert('User Registered Successfully. Login to continue...')
+        // console.log('reached');
+        return 'success';
+      }
+      else{
+        alert('Try Again, Failed to Register!');
+        return 'failure';
+      }
+      
     }
   }
 
@@ -64,7 +82,7 @@ class Admin extends Component{
           }
           no = {() =>
             <div align = 'center' >
-              <h2>Admin panel</h2>
+              <h2>Dashboard</h2>
             </div>
           }
         />

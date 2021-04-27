@@ -8,7 +8,7 @@ import store from '../configs/store';
 
 export default class RequestService {
   constructor(route = '') {
-    let uri = 'http://65.2.157.158:5000' || '';
+    let uri = 'http://c6704ceb00c8.ngrok.io' || '';
     this.url = `${uri}/${route}`;
 
     axios.defaults.headers = {
@@ -142,6 +142,20 @@ export default class RequestService {
       return res.data;
     } catch (error) {
       console.log('login erorrrrrrrr', error);
+      return{
+        success: false,
+        ...error.response,
+      }
+    }
+  }
+
+  register = async(username, password, contact_number) => {
+    try {
+      const res = await axios({ method: 'POST', url: `${this.url}/register`, data : { username, password, contact_number } });
+      console.log('registered', res.data);
+      return res.data;
+    } catch (error) {
+      console.log('register erorrrrrrrr', error);
       return{
         success: false,
         ...error.response,

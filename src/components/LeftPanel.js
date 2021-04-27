@@ -38,6 +38,12 @@ class LeftPanel extends Component{
                 >
                   Create Team
                 </Typography>
+                <Typography
+                  onClick = {() => this.props.changeControl('live')}
+                  style = {control === 'live' ? {...styles.textField, color: 'red'} : styles.textField}
+                >
+                  Live Match
+                </Typography>
               </div>
             }
             no = {() =>

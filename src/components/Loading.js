@@ -19,7 +19,7 @@ class Loading extends Component{
     const removePlayerLoading = this.props.removePlayer.isLoading;
 
 
-    const loading = matchListLoading || matchDetailsLoading || teamDetailsLoading || matchScoreLoading || addPlayerLoading || removePlayerLoading;
+    const loading = matchListLoading || matchDetailsLoading || teamDetailsLoading || matchScoreLoading || addPlayerLoading || removePlayerLoading || this.props.liveScore.isLoading;
     const { msg } = this.props;
     
     if(loading){
@@ -87,8 +87,8 @@ const styles = {
     color: Colors.SPECIAL_FONT
   },
 };
-const mapStateToProps = ({ matchList, matchDetails, teamDetails, matchScore, addPlayer, removePlayer}) => ({
-  matchList, matchDetails, teamDetails, matchScore, addPlayer, removePlayer
+const mapStateToProps = ({ matchList, matchDetails, teamDetails, matchScore, addPlayer, removePlayer, liveScore}) => ({
+  matchList, matchDetails, teamDetails, matchScore, addPlayer, removePlayer, liveScore
  });
 
 export default connect(mapStateToProps, {

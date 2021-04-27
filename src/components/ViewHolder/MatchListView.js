@@ -21,6 +21,7 @@ import {
   fetchMatchDetails,
   fetchTeamDetails,
   fetchMatchScore,
+  fetchLiveScore
 } from '../../actions/MatchStateActions';
 import {
   changeControl,
@@ -46,24 +47,29 @@ class ListViewHolder extends Component{
       this.state.show?
       <div className="modal" id="modal">
         <h2>Your Score : {this.props.matchScore.total_score}</h2>
-        <div className="content">
-          <table>
-          <tr style={{fontSize: 22}}>
-            <th style={{paddingRight: 40}}>Player Name</th>
-            <th>Points</th>
-          </tr>
-            {
-              team.map((item,index) => {
-                return (
-                <tr style={{fontSize: 18}}>
-                  <td style={{paddingRight: 40}}>{index+1}. {item.playername}</td>
-                  <td>{item.points}</td>
-                </tr>
-                )
-              })
-            }
-          </table>
-        </div>
+        {
+          team.length>0?
+      <div className="content">
+        <table>
+        <tr style={{fontSize: 22}}>
+          <th style={{paddingRight: 40}}>Player Name</th>
+          <th>Points</th>
+        </tr>
+          {
+            team.map((item,index) => {
+              return (
+              <tr style={{fontSize: 18}}>
+                <td style={{paddingRight: 40}}>{index+1}. {item.playername}</td>
+                <td>{item.points}</td>
+              </tr>
+              )
+            })
+          }
+        </table>
+      </div>
+      :
+      <div style={{padding: 10, fontSize: 16}}>Team not created for this match!</div>
+      }
         <div className="actions">
           <button className="toggle-button" onClick={this.onClose}>
             Close
@@ -126,6 +132,7 @@ class ListViewHolder extends Component{
 
   componentDidMount() {
     this.props.fetchMatchList();
+    this.props.fetchLiveScore();
   }
 
 
@@ -226,5 +233,6 @@ export default connect(mapStateToProps, {
   fetchTeamDetails,
   fetchMatchDetails,
   changeControl,
-  fetchMatchScore
+  fetchMatchScore,
+  fetchLiveScore
 })(ListViewHolder);
