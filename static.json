@@ -1,6 +1,7 @@
 {
     "headers": {
         "/**": {
+            "Content-Security-Policy": "connect-src https://fliprfantasybackend.herokuapp.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:;",
             "Referrer-Policy": "no-referrer, strict-origin-when-cross-origin",
             "Strict-Transport-Security": "max-age=63072000; includeSubDomains",
             "X-Content-Type-Options": "nosniff",
