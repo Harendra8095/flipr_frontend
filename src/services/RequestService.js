@@ -8,7 +8,7 @@ import store from '../configs/store';
 
 export default class RequestService {
   constructor(route = '') {
-    let uri = 'http://65.2.157.158:5000' || '';
+    let uri = 'https://fliprfantasybackend.herokuapp.com' || '';
     this.url = `${uri}/${route}`;
 
     axios.defaults.headers = {
